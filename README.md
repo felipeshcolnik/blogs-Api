@@ -12,23 +12,6 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-# Sumário
-
-- [Habilidades](#habilidades)
-- [Entregáveis](#entregáveis)
-  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-  - [Execução de testes unitários](#execução-de-testes-unitários)
-- [Como desenvolver](#como-desenvolver)
-  - [Linter](#linter)
-- [Requisitos do projeto](#requisitos-do-projeto)
-  - [Antes de começar](#antes-de-começar)
-  - [Observações importantes](#-observações-importantes)
-    - [Dicas](#dicas)
   - [Lista de Requisitos](#lista-de-requisitos)
     - [1 - Sua aplicação deve ter o endpoint POST `/user`](#1---sua-aplicação-deve-ter-o-endpoint-post-user)
     - [2 - Sua aplicação deve ter o endpoint POST `/login`](#2---sua-aplicação-deve-ter-o-endpoint-post-login)
@@ -91,7 +74,7 @@ Para fazer um post é necessário usuário e login, portanto será trabalhada a 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-010-a-project-blogs-api.git`.
+  * `git clone git@github.com:felipeshcolnik/blogs-Api.git`.
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-010-a-project-blogs-api`
 
