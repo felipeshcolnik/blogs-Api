@@ -17,7 +17,6 @@ module.exports = {
       },
       userId: {
         type: Sequelize.INTEGER,
-        // foreignKey: true, POR QUE NAO DEVE SER FOREIGKEY?
         references: {
           model: 'Users',
           key: 'id',

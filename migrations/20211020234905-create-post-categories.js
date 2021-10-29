@@ -7,7 +7,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'BlogPosts',
-          key: 'id', // primaryKey da tabela BlogPost
+          key: 'id',
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
@@ -17,8 +17,8 @@ module.exports = {
       categoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Categories', // nome da tabela visto gerado pela Migration
-          key: 'id', // primaryKey da tabela Category
+          model: 'Categories',
+          key: 'id',
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',

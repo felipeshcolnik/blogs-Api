@@ -12,8 +12,8 @@ const PostCategory = (sequelize, _DataTypes) => {
     models.Category.belongsToMany(models.BlogPost, {
       as: 'BlogPosts',
       through: postCategory,
-      foreignKey: 'categoryId', // é preciso linkar as 2 tabelas por isso pega a infos da associate acima.
-      otherKey: 'postId', // id do BlogPosts
+      foreignKey: 'categoryId', 
+      otherKey: 'postId',
     });
   };
   return postCategory;
