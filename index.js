@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const rescue = require('express-rescue');
@@ -6,6 +7,7 @@ const user = require('./src/controllers/userControler');
 const category = require('./src/controllers/categoryController');
 const post = require('./src/controllers/blogPostController');
 
+const { PORT } = process.env || 3001;
 const app = express();
 
 app.use(bodyParser.json());
@@ -25,7 +27,7 @@ app.put('/post/:id', rescue(user.validateToken), rescue(post.editPost));
 
 app.use(errors);
 
-app.listen(3000, () => console.log('ouvindo porta 3000!'));
+app.listen(PORT, () => console.log(`ouvindo porta ${PORT}!`));
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (request, response) => {
