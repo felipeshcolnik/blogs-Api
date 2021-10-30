@@ -55,9 +55,18 @@ const editPost = async (postId, body, userId) => {
   return result;
 };
 
+const deletePost = async (postId, userId) => {
+  const post = await BlogPost.findOne({ where: { id: postId } });
+  if (!post) throw error.postDoesNotExist;
+  if (post.userId !== userId) throw error.unauthorizedUser;
+  await BlogPost.destroy({ where: { id: postId } });
+  return true;
+};
+
 module.exports = {
   createPost,
   getAllPosts,
   getPostById,
   editPost,
+  deletePost,
 };
