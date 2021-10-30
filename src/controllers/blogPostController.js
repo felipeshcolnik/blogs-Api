@@ -25,9 +25,17 @@ const editPost = async (req, res) => {
   return res.status(200).json(result);
 };
 
+const deletePost = async (req, res) => {  
+  const { id } = req.params;  
+  const userId = req.user.id;
+  await blogPostService.deletePost(id, userId);
+  return res.status(204).send('oi');
+};
+
 module.exports = {
   createPost,
   getAllPosts,
   getPostById,
   editPost,
+  deletePost,
 };
