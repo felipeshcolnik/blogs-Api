@@ -78,6 +78,11 @@ const unauthorizedUser = {
   status: 401,
 };
 
+const categoriesNotEdited = {
+  message: 'Categories cannot be edited',
+  status: 400,
+};
+
 module.exports = {
   tokenNotFound,
   expOrInvalidToken,
@@ -95,4 +100,5 @@ module.exports = {
   categoryNotFound,
   postDoesNotExist,
   unauthorizedUser,
+  categoriesNotEdited,
 };
