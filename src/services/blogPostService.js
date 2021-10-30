@@ -40,7 +40,9 @@ const getPostById = async (id) => {
   return result;
 };
 
-const editPost = async (postId, title, content, userId) => {
+const editPost = async (postId, body, userId) => {
+  if (body.categoryIds || body.categoryIds === '') throw error.categoriesNotEdited;
+  const { title, content } = body;
   validateFcts.EditPostParams({ id: postId, title, content });
   const post = await BlogPost.findOne({ where: { id: postId } });
   if (post.userId !== userId) throw error.unauthorizedUser;
