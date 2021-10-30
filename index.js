@@ -24,6 +24,7 @@ app.post('/post', rescue(user.validateToken), rescue(post.createPost));
 app.get('/post/:id', rescue(user.validateToken), rescue(post.getPostById));
 app.get('/post', rescue(user.validateToken), rescue(post.getAllPosts));
 app.put('/post/:id', rescue(user.validateToken), rescue(post.editPost));
+app.delete('/post/:id', rescue(user.validateToken), rescue(post.deletePost));
 
 app.use(errors);
 
