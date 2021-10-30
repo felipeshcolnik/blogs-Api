@@ -18,11 +18,10 @@ const getPostById = async (req, res) => {
   return res.status(200).json(result);
 };
 
-const editPost = async (req, res) => {
-  const { id } = req.params;
-  const { title, content } = req.body;
+const editPost = async (req, res) => {  
+  const { id } = req.params;  
   const userId = req.user.id;
-  const result = await blogPostService.editPost(id, title, content, userId);
+  const result = await blogPostService.editPost(id, req.body, userId);
   return res.status(200).json(result);
 };
 
