@@ -9,9 +9,13 @@ const error = require('../utils/errorsObject');
 const createPost = async (title, categoryIds, content, userId) => {
   validateFcts.validatePost({ title, categoryIds, content });
   const categoryIdExists = await Category.findAll({ where: { id: { [opIn]: categoryIds } } });
-  console.log(`CategorieId Existe: ${categoryIdExists}`);
   if (!categoryIdExists.length) throw error.categoryNotFound;
-  const result = await BlogPost.create({ title, categoryIds, content, userId });
+  const result = await BlogPost.create({ title, content, userId });
+  const newPost = await BlogPost.findByPk(result.id);
+  categoryIds.forEach(async (id) => {
+    const cat = await Category.findByPk(id);
+    newPost.addCategory(cat);
+  });
   return result;
 };
 
