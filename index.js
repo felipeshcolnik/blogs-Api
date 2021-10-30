@@ -7,7 +7,7 @@ const user = require('./src/controllers/userControler');
 const category = require('./src/controllers/categoryController');
 const post = require('./src/controllers/blogPostController');
 
-const { PORT } = process.env || 3001;
+const { PORT } = process.env || 3000;
 const app = express();
 
 app.use(bodyParser.json());
