@@ -12,10 +12,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post('/user', rescue(user.createUser));
 app.post('/login', rescue(user.login));
+
+app.post('/user', rescue(user.createUser));
 app.get('/user/:id', rescue(user.validateToken), rescue(user.getById));
 app.get('/user', rescue(user.validateToken), rescue(user.getAll));
+app.delete('/user/me', rescue(user.validateToken), rescue(user.deleteUser));
 
 app.post('/categories', rescue(user.validateToken), rescue(category.createCategory));
 app.get('/categories', rescue(user.validateToken), rescue(category.getAll));
